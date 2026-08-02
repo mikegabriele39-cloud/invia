@@ -1,16 +1,22 @@
-INVIA WEBSITE V14
+INVIA WEBSITE V15
 
-This version uses NEW filenames to prevent caching:
-- style-v14.css
-- script-v14.js
-- vinland-product-v14.png
+NEW:
+- Gurren Lagann product showcase image
+- Full Gurren Lagann collection/product page
+- Product image lightbox
+- XS through XXL sizing
+- Quantity selector
+- Product information tabs
+- Shipping highlights
+- Related products section
+- New cache-proof files:
+  style-v15.css
+  script-v15.js
 
-Major visible changes:
-- Vinland image edges fade directly into the gallery; no hard rectangular box.
-- Collections are now a compact two-column visual grid.
-- Collection titles are much smaller and use DM Sans.
-- About explains INVIA as many paths.
-- Added: "Many paths. One purpose."
-
-Upload EVERY individual file.
-Do not keep relying on the old style.css or script.js — V14 HTML does not use them.
+Upload every individual file, especially:
+- gurren-product-showcase.png
+- gurren-lagann.html
+- index.html
+- collections.html
+- style-v15.css
+- script-v15.js
