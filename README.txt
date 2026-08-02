@@ -1,10 +1,12 @@
-INVIA WEBSITE V6
+INVIA WEBSITE V7
 
-Changes:
-- one solid dark background (#0b0b0b)
-- transparent INVIA logo, so there is no black rectangle
-- transparent shirt images, so there is no white rectangle
-- working drag-to-spin front/back viewer
-- front and back buttons still included
+This version:
+- shows the Vinland shirt only once
+- uses a 3D-style draggable front/back viewer
+- supports scroll-to-zoom
+- removes remaining pale background edges more aggressively
+- adds cinematic particles and cursor light
+- keeps one simple charcoal background
+- keeps full-screen collection worlds
 
-Upload every file in this folder and replace the old versions.
+Upload every file in this folder and replace the existing versions.
