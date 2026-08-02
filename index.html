@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="INVIA Apparel — faith, perseverance, and purpose." />
+  <title>INVIA Apparel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-mark">INVIA</div>
+  </div>
+
+  <div class="background" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="mini-logo" href="#home">INVIA</a>
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content reveal">
+        <img class="hero-logo" src="invia-logo.png" alt="INVIA logo" />
+
+        <p class="eyebrow">Faith · Perseverance · Purpose</p>
+
+        <a class="primary-button" href="#collections">
+          <span>Collection</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <a class="scroll-cue" href="#collections">Scroll to explore</a>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Choose your story</p>
+        <h2>Collections</h2>
+        <p class="section-copy">These cards are placeholders. Later, each one can open its own collection page.</p>
+      </div>
+
+      <div class="collection-grid">
+        <a class="collection-card card-one reveal" href="#" aria-label="First collection placeholder">
+          <span class="card-number">01</span>
+          <div>
+            <h3>Collection One</h3>
+            <p>Add your collection name and image here.</p>
+          </div>
+          <span class="card-arrow">↗</span>
+        </a>
+
+        <a class="collection-card card-two reveal" href="#" aria-label="Second collection placeholder">
+          <span class="card-number">02</span>
+          <div>
+            <h3>Collection Two</h3>
+            <p>Add your collection name and image here.</p>
+          </div>
+          <span class="card-arrow">↗</span>
+        </a>
+
+        <a class="collection-card card-three reveal" href="#" aria-label="Third collection placeholder">
+          <span class="card-number">03</span>
+          <div>
+            <h3>Collection Three</h3>
+            <p>Add your collection name and image here.</p>
+          </div>
+          <span class="card-arrow">↗</span>
+        </a>
+
+        <a class="collection-card card-four reveal" href="#" aria-label="Fourth collection placeholder">
+          <span class="card-number">04</span>
+          <div>
+            <h3>Collection Four</h3>
+            <p>Add your collection name and image here.</p>
+          </div>
+          <span class="card-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="about-panel reveal">
+        <p class="eyebrow">The brand</p>
+        <h2>Stories worth wearing.</h2>
+        <p>
+          INVIA creates expressive streetwear shaped by faith, endurance,
+          meaning, and confidence.
+        </p>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-panel reveal">
+        <p class="eyebrow">Stay connected</p>
+        <h2>Follow the journey.</h2>
+        <div class="contact-links">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="mailto:hello@inviaapparel.com">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 INVIA Apparel</span>
+    <span>Designed with purpose.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
