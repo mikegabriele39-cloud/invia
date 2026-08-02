@@ -30,3 +30,10 @@ IMPORTANT:
 Checkout is still a visual prototype. A real payment system requires Shopify, Stripe, or another ecommerce backend.
 
 Upload every individual file in this folder to the ROOT of the GitHub repository.
+
+
+VERSION 11 TWEAKS:
+- Product image now uses object-fit: contain so neither shirt is cropped.
+- Added original animated visuals for every collection:
+  Vinland ocean horizon, Berserk eclipse/ash, Black Clover magical symbol, and Gurren Lagann spiral galaxy.
+- No copyrighted character artwork is embedded in these backgrounds.
