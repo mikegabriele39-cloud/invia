@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title>Collections — INVIA</title><link rel="stylesheet" href="style.css"></head><body><div class="page-noise"></div><canvas id="particles"></canvas><div class="cursor-light" id="cursorLight"></div>
+<header class="site-header">
+  <a class="brand" href="index.html" data-transition>INVIA</a>
+  <nav class="nav-links" id="navLinks">
+    <a href="collections.html" data-transition class="active">Collections</a>
+    <a href="lookbook.html" data-transition class="">Lookbook</a>
+    <a href="about.html" data-transition class="">About</a>
+    <a href="contact.html" data-transition class="">Contact</a>
+  </nav>
+  <div class="header-actions">
+    <button class="header-button" data-open-cart>Cart <span data-cart-count>0</span></button>
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+<main>
+<section class="page-hero container"><div><p class="eyebrow">INVIA Worlds</p><h1 class="display">Collections.</h1><p class="lead">Each collection carries its own atmosphere, message, and story.</p></div></section>
+<section class="container section"><div class="world-stack">
+<a class="world-panel world-vinland reveal" href="vinland.html" data-transition><div class="world-art"></div><div class="world-copy"><span>01</span><h3>Vinland Saga</h3><p>The path to peace.</p><strong>Enter Collection ↗</strong></div></a>
+<a class="world-panel world-berserk reveal" href="berserk.html" data-transition><div class="world-art"></div><div class="world-copy"><span>02</span><h3>Berserk</h3><p>Endure.</p><strong>Enter Collection ↗</strong></div></a>
+<a class="world-panel world-clover reveal" href="black-clover.html" data-transition><div class="world-art"></div><div class="world-copy"><span>03</span><h3>Black Clover</h3><p>Never give up.</p><strong>Enter Collection ↗</strong></div></a>
+<a class="world-panel world-gurren reveal" href="gurren-lagann.html" data-transition><div class="world-art"></div><div class="world-copy"><span>04</span><h3>Gurren Lagann</h3><p>Believe in the you that believes in yourself.</p><strong>Enter Collection ↗</strong></div></a>
+</div></section></main>
+
+<div class="drawer-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-header"><h2>Your Cart</h2><button class="close-cart" id="closeCart">×</button></div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="subtotalValue">$0.00</strong></div><button class="checkout-button">Checkout coming soon</button></div>
+</aside>
+<div class="page-transition" id="pageTransition"></div>
+<footer><span>© 2026 INVIA Apparel</span><span>Faith · Perseverance · Purpose</span></footer>
+<script src="script.js"></script></body></html>

@@ -1,17 +1,32 @@
-INVIA WEBSITE V9
+INVIA WEBSITE V10
 
-Included:
-- cinematic intro
-- subtle particles and cursor light
-- premium typography and spacing
-- one Vinland shirt preview using the supplied studio image
-- working Instagram link:
-  https://www.instagram.com/invia_apparel/
-- working TikTok link:
-  https://www.tiktok.com/@invia_apparel
-- improved Add to Cart animation
+NEW PAGES:
+- index.html
+- collections.html
+- vinland.html
+- berserk.html
+- black-clover.html
+- gurren-lagann.html
+- lookbook.html
+- about.html
+- contact.html
+
+NEW FEATURES:
+- Gurren Lagann collection
+- dedicated collections page
+- dedicated Vinland product page
+- coming-soon collection pages
+- working local cart drawer
+- size selection
+- Add to Cart stored in the browser
+- contact form that opens the visitor's email app
+- Instagram and TikTok links
 - mobile navigation
-- full-screen collection panels
-- smoother reveal animations
+- page transition animation
+- lookbook page
+- improved responsive design
 
-Upload every individual file in this folder to GitHub and replace the older versions.
+IMPORTANT:
+Checkout is still a visual prototype. A real payment system requires Shopify, Stripe, or another ecommerce backend.
+
+Upload every individual file in this folder to the ROOT of the GitHub repository.
