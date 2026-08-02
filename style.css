@@ -340,3 +340,40 @@ footer{
   padding:0 !important;
   border-radius:20px;
 }
+
+
+/* V13 — seamless Vinland product image */
+.gallery {
+  padding: 0 !important;
+  background: rgb(10, 10, 10) !important;
+  overflow: hidden;
+}
+.gallery img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 0 !important;
+  border-radius: 30px !important;
+  background: rgb(10, 10, 10) !important;
+}
+
+/* V13 — smaller collection typography for future growth */
+.world-copy h3 {
+  font-family: "DM Sans", sans-serif !important;
+  font-size: clamp(2.7rem, 6vw, 6.2rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.055em !important;
+  line-height: .9 !important;
+}
+.world-panel {
+  min-height: 560px !important;
+}
+@media(max-width:720px) {
+  .world-copy h3 {
+    font-size: clamp(2.5rem, 14vw, 4.4rem) !important;
+  }
+  .world-panel {
+    min-height: 430px !important;
+  }
+}
