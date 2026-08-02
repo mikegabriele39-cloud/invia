@@ -4,111 +4,128 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="INVIA Apparel — faith, perseverance, and purpose." />
+  <meta name="theme-color" content="#090909" />
   <title>INVIA Apparel</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-glow"></div>
+    <img src="invia-logo-transparent.png" alt="" />
+    <p>Faith · Perseverance · Purpose</p>
+  </div>
+
   <canvas id="particles" aria-hidden="true"></canvas>
-  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
 
   <header class="topbar" id="topbar">
-    <a class="topbar-brand" href="#home">INVIA</a>
-    <nav class="topbar-nav" aria-label="Main navigation">
+    <a class="brand" href="#home">INVIA</a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
       <a href="#featured">Featured</a>
       <a href="#collections">Collections</a>
       <a href="#story">Story</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="cart-pill" href="#featured">Cart <span id="cartCount">0</span></a>
+
+    <a class="cart-pill" href="#featured">
+      Cart <span id="cartCount">0</span>
+    </a>
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <img id="heroLogo" class="hero-logo" src="invia-logo-transparent.png" alt="INVIA logo" />
-      <p class="hero-tagline">Faith · Perseverance · Purpose</p>
-      <a class="hero-enter" href="#featured">Enter</a>
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+        <img class="hero-logo" id="heroLogo" src="invia-logo-transparent.png" alt="INVIA logo" />
+        <p class="hero-tagline">Faith · Perseverance · Purpose</p>
+        <a class="hero-enter" href="#featured">Enter the world</a>
+      </div>
+
+      <span class="scroll-note">Scroll to explore</span>
     </section>
 
     <section class="featured" id="featured">
       <div class="featured-copy reveal">
         <p class="eyebrow">Featured drop</p>
         <h1>Love Your Enemies.</h1>
-        <p>
+        <p class="lead">
           A Vinland-inspired piece built around Matthew 5:44, forgiveness,
           resilience, and choosing peace over hatred.
         </p>
 
-        <div class="product-meta">
+        <div class="product-line">
           <span>INVIA · VINLAND COLLECTION</span>
           <span>$00.00 CAD</span>
         </div>
 
-        <div class="sizes">
+        <div class="size-picker" aria-label="Choose a size">
           <button>S</button>
           <button class="selected">M</button>
           <button>L</button>
           <button>XL</button>
         </div>
 
-        <button class="add-button" id="addButton">Add to Cart</button>
+        <button class="add-button" id="addButton">
+          <span class="button-label">Add to Cart</span>
+          <span class="button-check">✓</span>
+        </button>
       </div>
 
-      <div class="viewer-area reveal">
-        <div class="museum-light" aria-hidden="true"></div>
+      <div class="featured-image-wrap reveal" id="featuredImageWrap">
+        <div class="image-light"></div>
+        <img src="vinland-featured.png" alt="Front and back views of the Love Your Enemies tee" />
+      </div>
+    </section>
 
-        <div class="viewer-shell" id="viewerShell">
-          <div class="shirt-object" id="shirtObject">
-            <div class="shirt-face shirt-front">
-              <img src="vinland-front.png" alt="Front view of the Love Your Enemies tee" />
-            </div>
-            <div class="shirt-face shirt-back">
-              <img src="vinland-back.png" alt="Back view of the Love Your Enemies tee" />
-            </div>
-            <div class="shirt-side side-left"></div>
-            <div class="shirt-side side-right"></div>
-          </div>
+    <section class="collections" id="collections">
+      <div class="collections-heading reveal">
+        <p class="eyebrow">Enter each world</p>
+        <h2>Collections</h2>
+      </div>
+
+      <a class="collection-panel berserk reveal" href="#">
+        <div class="panel-art"></div>
+        <div class="panel-content">
+          <span>01</span>
+          <h3>Berserk</h3>
+          <p>Dark endurance, quiet strength, and the will to continue.</p>
+          <strong>Enter Collection ↗</strong>
         </div>
+      </a>
 
-        <div class="viewer-controls">
-          <button class="view-btn active" data-angle="0">Front</button>
-          <button class="view-btn" data-angle="180">Back</button>
-          <span>Drag to rotate · Scroll to zoom</span>
+      <a class="collection-panel vinland reveal" href="#featured">
+        <div class="panel-art"></div>
+        <div class="panel-content">
+          <span>02</span>
+          <h3>Vinland Saga</h3>
+          <p>Forgiveness, purpose, and the courage to choose peace.</p>
+          <strong>Enter Collection ↗</strong>
         </div>
-      </div>
-    </section>
+      </a>
 
-    <section class="world world-berserk" id="collections">
-      <div class="world-copy reveal">
-        <p class="world-number">01</p>
-        <h2>Berserk</h2>
-        <p>Dark endurance, quiet strength, and the will to continue.</p>
-        <a href="#">Enter Collection ↗</a>
-      </div>
-    </section>
-
-    <section class="world world-vinland">
-      <div class="world-copy reveal">
-        <p class="world-number">02</p>
-        <h2>Vinland Saga</h2>
-        <p>Forgiveness, purpose, and the courage to choose peace.</p>
-        <a href="#featured">Enter Collection ↗</a>
-      </div>
-    </section>
-
-    <section class="world world-clover">
-      <div class="world-copy reveal">
-        <p class="world-number">03</p>
-        <h2>Black Clover</h2>
-        <p>Perseverance, belief, and refusing to give up.</p>
-        <a href="#">Enter Collection ↗</a>
-      </div>
+      <a class="collection-panel clover reveal" href="#">
+        <div class="panel-art"></div>
+        <div class="panel-content">
+          <span>03</span>
+          <h3>Black Clover</h3>
+          <p>Perseverance, belief, and refusing to give up.</p>
+          <strong>Enter Collection ↗</strong>
+        </div>
+      </a>
     </section>
 
     <section class="story" id="story">
-      <div class="story-logo reveal">
-        <img src="invia-logo-transparent.png" alt="INVIA logo" />
+      <div class="story-mark reveal">
+        <img src="invia-logo-transparent.png" alt="INVIA emblem" />
       </div>
+
       <div class="story-copy reveal">
         <p class="eyebrow">The brand</p>
         <h2>Built for people who keep moving forward.</h2>
@@ -120,21 +137,37 @@
     </section>
 
     <section class="contact" id="contact">
-      <div class="contact-inner reveal">
-        <p class="eyebrow">Be part of the first drop</p>
-        <h2>Follow the journey.</h2>
-        <div class="contact-links">
-          <a href="#">Instagram</a>
-          <a href="#">TikTok</a>
-          <a href="mailto:hello@inviaapparel.com">Email</a>
+      <div class="contact-card reveal">
+        <p class="eyebrow">Follow the journey</p>
+        <h2>Be there from the beginning.</h2>
+
+        <div class="social-links">
+          <a href="https://www.instagram.com/invia_apparel/" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon">◎</span>
+            <span>Instagram</span>
+          </a>
+
+          <a href="https://www.tiktok.com/@invia_apparel" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon">♪</span>
+            <span>TikTok</span>
+          </a>
+
+          <a href="mailto:hello@inviaapparel.com">
+            <span class="social-icon">✉</span>
+            <span>Email</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
+  <div class="cart-toast" id="cartToast" role="status" aria-live="polite">
+    Added to cart
+  </div>
+
   <footer>
     <span>© 2026 INVIA Apparel</span>
-    <span>Designed with purpose.</span>
+    <span>Faith · Perseverance · Purpose</span>
   </footer>
 
   <script src="script.js"></script>

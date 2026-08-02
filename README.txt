@@ -1,12 +1,17 @@
-INVIA WEBSITE V7
+INVIA WEBSITE V9
 
-This version:
-- shows the Vinland shirt only once
-- uses a 3D-style draggable front/back viewer
-- supports scroll-to-zoom
-- removes remaining pale background edges more aggressively
-- adds cinematic particles and cursor light
-- keeps one simple charcoal background
-- keeps full-screen collection worlds
+Included:
+- cinematic intro
+- subtle particles and cursor light
+- premium typography and spacing
+- one Vinland shirt preview using the supplied studio image
+- working Instagram link:
+  https://www.instagram.com/invia_apparel/
+- working TikTok link:
+  https://www.tiktok.com/@invia_apparel
+- improved Add to Cart animation
+- mobile navigation
+- full-screen collection panels
+- smoother reveal animations
 
-Upload every file in this folder and replace the existing versions.
+Upload every individual file in this folder to GitHub and replace the older versions.
