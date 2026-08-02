@@ -1,21 +1,10 @@
-INVIA WEBSITE V5
+INVIA WEBSITE V6
 
-This version includes:
-- huge INVIA logo hero
-- animated glow and subtle stars
-- logo shrinks as you scroll
-- Vinland Saga shirt featured
-- full-screen Berserk, Vinland Saga, and Black Clover collection sections
-- interactive front/back product viewer
-- mouse tilt movement
-- size selector
-- demo Add to Cart counter
+Changes:
+- one solid dark background (#0b0b0b)
+- transparent INVIA logo, so there is no black rectangle
+- transparent shirt images, so there is no white rectangle
+- working drag-to-spin front/back viewer
+- front and back buttons still included
 
-UPLOAD AND REPLACE:
-- index.html
-- style.css
-- script.js
-- invia-logo.png
-- vinland-shirt-full.png
-- vinland-front.png
-- vinland-back.png
+Upload every file in this folder and replace the old versions.
