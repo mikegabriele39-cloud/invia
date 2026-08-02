@@ -1,22 +1,11 @@
-INVIA WEBSITE V15
+INVIA WEBSITE V16
 
-NEW:
-- Gurren Lagann product showcase image
-- Full Gurren Lagann collection/product page
-- Product image lightbox
-- XS through XXL sizing
-- Quantity selector
-- Product information tabs
-- Shipping highlights
-- Related products section
-- New cache-proof files:
-  style-v15.css
-  script-v15.js
+Only requested image changes:
+- Gurren Lagann product page uses gurren-product-v16.png.
+- Berserk collection uses collection-berserk-v16.webp.
+- Vinland Saga collection uses collection-vinland-v16.jpg.
+- Black Clover collection uses collection-clover-v16.jpg.
+- Gurren Lagann collection uses collection-gurren-v16.jpg.
+- New cache-proof files: style-v16.css and script-v16.js.
 
-Upload every individual file, especially:
-- gurren-product-showcase.png
-- gurren-lagann.html
-- index.html
-- collections.html
-- style-v15.css
-- script-v15.js
+Upload every individual file.
