@@ -1,4 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title>Love Your Enemies — INVIA</title><link rel="stylesheet" href="style-v18.css?v=18"></head><body><div class="page-noise"></div><canvas id="particles"></canvas><div class="cursor-light" id="cursorLight"></div>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title>Love Your Enemies — INVIA</title><link rel="stylesheet" href="style-v19.css?v=19"></head><body>
+<div class="site-loader compact-loader" id="siteLoader" aria-hidden="true">
+  <div class="loader-mark">
+    <span class="loader-word">INVIA</span>
+    <span></span>
+  </div>
+</div><div class="page-noise"></div><canvas id="particles"></canvas><div class="cursor-light" id="cursorLight"></div>
 <header class="site-header">
   <a class="brand" href="index.html" data-transition>INVIA</a>
   <nav class="nav-links" id="navLinks">
@@ -12,28 +18,135 @@
     <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </div>
 </header>
+
 <main>
-<section class="page-hero container"><div><p class="eyebrow">Vinland Collection · Drop 001</p><h1 class="display">Love Your Enemies.</h1><p class="lead">Matthew 5:44 — choosing peace over hatred.</p></div></section>
-<section class="container product-page" data-product>
-  <div class="gallery reveal"><img src="vinland-floating-v18.png?v=18" alt="Love Your Enemies tee front and back"></div>
-  <div class="product-details reveal">
-    <p class="eyebrow">INVIA · VINLAND COLLECTION</p><h1>Love Your Enemies Tee</h1><p class="price">$39.00 CAD</p>
-    <p class="lead">A heavyweight black tee built around forgiveness, resilience, and the courage to leave revenge behind.</p>
-    <div class="detail-block"><h3>Choose your size</h3><div class="size-picker"><button>S</button><button class="selected">M</button><button>L</button><button>XL</button></div><button class="add-button" data-add-product>Add to Cart</button></div>
-    <div class="detail-block"><h3>Details</h3><ul><li>Oversized streetwear fit</li><li>Heavyweight cotton feel</li><li>Front crown-of-thorns detail</li><li>Large back landscape graphic</li></ul></div>
-    <div class="detail-block"><h3>Story</h3><p>The design combines Matthew 5:44 with a quiet landscape to represent a person choosing peace after hardship.</p></div>
-    <div class="detail-block"><h3>Care</h3><p>Wash cold, inside out. Hang dry when possible. Do not iron directly over the print.</p></div>
-    <div class="detail-block"><h3>Shipping</h3><p>Shipping information will be finalized before the first official drop.</p></div>
+  <section class="page-hero container product-hero">
+    <div>
+      <p class="eyebrow">VINLAND COLLECTION · DROP 001</p>
+      <h1 class="display">Love Your Enemies.</h1>
+      <p class="lead">Matthew 5:44 — choosing peace over hatred.</p>
+    </div>
+  </section>
+
+  <section class="container product-page premium-product-page"
+    data-product
+    data-product-name="Love Your Enemies Tee"
+    data-product-price="39"
+    data-product-image="vinland-main-v19.png">
+
+    <div class="product-gallery-column reveal">
+      <div class="gallery premium-gallery">
+        <button class="gallery-expand" type="button" aria-label="Open image full screen">↗</button>
+        <img class="gallery-main-image" src="vinland-main-v19.png?v=19" alt="Love Your Enemies Tee">
+        <div class="gallery-zoom-hint">Click or hover to inspect</div>
+      </div>
+
+      <div class="gallery-thumbnails">
+        <button class="gallery-thumb active" data-gallery-src="vinland-main-v19.png?v=19" aria-label="Full view"><img src="vinland-main-v19.png?v=19" alt="Full view"></button><button class="gallery-thumb " data-gallery-src="vinland-front-v19.png?v=19" aria-label="Front"><img src="vinland-front-v19.png?v=19" alt="Front"></button><button class="gallery-thumb " data-gallery-src="vinland-back-v19.png?v=19" aria-label="Back"><img src="vinland-back-v19.png?v=19" alt="Back"></button><button class="gallery-thumb " data-gallery-src="vinland-detail-v19.png?v=19" aria-label="Detail"><img src="vinland-detail-v19.png?v=19" alt="Detail"></button>
+      </div>
+    </div>
+
+    <div class="product-details reveal">
+      <p class="eyebrow">VINLAND COLLECTION · DROP 001</p>
+      <h1>Love Your Enemies Tee</h1>
+
+      <div class="rating-line">
+        <span class="stars">★★★★★</span>
+        <span>Early preview</span>
+      </div>
+
+      <p class="price">$39.00 CAD</p>
+      <p class="lead">A heavyweight black tee built around forgiveness, resilience, and the courage to leave revenge behind.</p>
+
+      <div class="purchase-panel">
+        <div class="option-heading">
+          <h3>Select size</h3>
+          <button class="size-guide-button" type="button" data-size-guide>Size guide</button>
+        </div>
+
+        <div class="size-picker premium-sizes">
+          <button>XS</button>
+          <button>S</button>
+          <button class="selected">M</button>
+          <button>L</button>
+          <button>XL</button>
+          <button>XXL</button>
+        </div>
+
+        <div class="purchase-row">
+          <div class="quantity-selector">
+            <button type="button" data-qty-minus aria-label="Decrease quantity">−</button>
+            <span data-qty-value>1</span>
+            <button type="button" data-qty-plus aria-label="Increase quantity">+</button>
+          </div>
+          <button class="add-button premium-add" data-add-product>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="shipping-points">
+        <p>✓ Premium heavyweight cotton feel</p>
+        <p>✓ Oversized unisex streetwear fit</p>
+        <p>✓ Front and back statement graphics</p>
+      </div>
+
+      <div class="product-accordions">
+        <details open>
+          <summary>Description <span>+</span></summary>
+          <p>A heavyweight black tee built around forgiveness, resilience, and the courage to leave revenge behind.</p>
+        </details>
+        <details>
+          <summary>Design story <span>+</span></summary>
+          <p>The design combines Matthew 5:44 with a quiet landscape to represent someone choosing peace after hardship.</p>
+        </details>
+        <details>
+          <summary>Product details <span>+</span></summary>
+          <ul><li>Oversized unisex fit</li><li>Heavyweight cotton feel</li><li>Front crown-of-thorns detail</li><li>Large monochrome landscape back graphic</li></ul>
+        </details>
+        <details>
+          <summary>Care & shipping <span>+</span></summary>
+          <p>Wash cold and inside out. Hang dry when possible. Do not iron directly over the print. Final shipping timelines will be confirmed before launch.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section related-products">
+    <div class="section-heading compact-heading">
+      <div>
+        <p class="eyebrow">Continue exploring</p>
+        <h2 class="display-small">You may also like.</h2>
+      </div>
+    </div>
+    <div class="related-grid"><a href="gurren-lagann.html" class="related-card" data-transition>
+          <img src="gurren-main-v19.png" alt="Pierce the Heavens">
+          <div><span>Gurren Lagann</span><strong>Pierce the Heavens</strong></div>
+        </a><a href="berserk.html" class="related-card" data-transition>
+          <img src="collection-berserk.jpg" alt="Endure">
+          <div><span>Berserk</span><strong>Endure</strong></div>
+        </a><a href="black-clover.html" class="related-card" data-transition>
+          <img src="collection-clover-v16.jpg" alt="Never Give Up">
+          <div><span>Black Clover</span><strong>Never Give Up</strong></div>
+        </a></div>
+  </section>
+
+  <div class="sticky-product-bar" data-sticky-product>
+    <div>
+      <strong>Love Your Enemies Tee</strong>
+      <span>$39.00 CAD</span>
+    </div>
+    <button type="button" data-sticky-add>Add to Cart</button>
   </div>
-</section>
 </main>
+
 
 <div class="drawer-overlay" id="cartOverlay"></div>
 <aside class="cart-drawer" id="cartDrawer">
   <div class="cart-header"><h2>Your Cart</h2><button class="close-cart" id="closeCart">×</button></div>
   <div class="cart-body" id="cartBody"></div>
-  <div class="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="subtotalValue">$0.00</strong></div><button class="checkout-button">Checkout coming soon</button></div>
+  <div class="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="subtotalValue">$0.00</strong></div><button class="checkout-button">Secure checkout coming soon</button><p class="cart-footer-note">Taxes and shipping calculated at checkout.</p></div>
 </aside>
 <div class="page-transition" id="pageTransition"></div>
 <footer><span>© 2026 INVIA Apparel</span><span>Faith · Perseverance · Purpose</span></footer>
-<script src="script-v18.js?v=18"></script></body></html>
+<script src="script-v19.js?v=19"></script></body></html>
