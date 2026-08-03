@@ -1,7 +1,6 @@
-INVIA Website Version 24
-
-Updated Vinland Saga and Gurren Lagann product pages with crisp, separate front and back product images.
-Front and Back buttons show only the selected shirt view.
-Updated Lookbook with crisp paired front/back imagery.
-Original collection banner artwork remains unchanged.
-Only required production files are included.
+INVIA Website Version 25
+- Updated Vinland product page with darker crisp front/back renders
+- Updated Vinland lookbook drop image
+- Reduced oversized lookbook card height and empty space
+- Enlarged product imagery in the lookbook
+- Kept Gurren Lagann and all other pages unchanged
