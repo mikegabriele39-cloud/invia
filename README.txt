@@ -1,31 +1,17 @@
-INVIA WEBSITE V20
+INVIA WEBSITE — VERSION 20
 
-Only the requested updates were made:
+New in V20:
+- Dedicated checkout page linked from every cart drawer
+- Persistent cart using localStorage
+- Customer and Canadian shipping-address form
+- Inline validation and postal-code formatting
+- Standard and express shipping options
+- Free standard shipping over $100 CAD
+- Live subtotal, shipping, 13% estimated tax, discount, and total calculations
+- Working INVIA10 promo code
+- Responsive mobile order-summary drawer
+- Preview order confirmation and locally stored order number
+- Improved checkout trust, safety, and visual design
 
-1. Lookbook
-- Added the approved Gurren Lagann premium mockup.
-- Replaced the Vinland image with a fully visible transparent version.
-- Both product images use object-fit: contain, so neither is cut off.
-- Both images blend directly into the Lookbook background.
-
-2. Product pages
-- Rebuilt the Vinland and Gurren gallery images from the original-resolution transparent files.
-- No additional upscaling was used.
-- Sharpening was applied carefully to reduce blur.
-- Full, front, back, and detail gallery images were refreshed.
-
-3. Removed unwanted legacy assets
-- Old unversioned collection images
-- gurren-product-showcase.png
-- vinland-product-v14.png
-- vinland-product-safe.jpg
-- Old floating and V19 gallery assets
-
-Current files:
-- style-v20.css
-- script-v20.js
-- vinland-*-v20.png
-- gurren-*-v20.png
-- collection-*-v16 assets
-
-Upload every individual file from this folder.
+IMPORTANT:
+This static GitHub Pages build does not collect card information or process real payments. A Stripe Checkout/Shopify/payment-provider connection requires merchant account details and is intentionally left for the next revision after the layout is approved.

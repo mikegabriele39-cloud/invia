@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Secure checkout for INVIA Apparel.">
+  <title>Checkout — INVIA Apparel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-v20.css?v=20">
+</head>
+<body class="checkout-body">
+  <div class="site-loader" id="siteLoader"><span>INVIA</span></div>
+  <div class="cursor-light" id="cursorLight"></div>
+
+  <header class="site-header checkout-header">
+    <a class="brand" href="index.html" aria-label="INVIA home">
+      <img src="invia-logo-transparent.png" alt="INVIA Apparel">
+    </a>
+    <div class="checkout-header-center">Secure Checkout</div>
+    <a class="checkout-return" href="collections.html">Continue shopping</a>
+  </header>
+
+  <main class="checkout-shell">
+    <section class="checkout-main-column">
+      <div class="checkout-progress" aria-label="Checkout steps">
+        <div class="active"><span>1</span><strong>Information</strong></div>
+        <i></i>
+        <div><span>2</span><strong>Shipping</strong></div>
+        <i></i>
+        <div><span>3</span><strong>Confirmation</strong></div>
+      </div>
+
+      <form id="checkoutForm" class="checkout-form" novalidate>
+        <section class="checkout-card">
+          <div class="checkout-section-heading">
+            <div><p class="eyebrow">Contact</p><h1>Where should we send it?</h1></div>
+            <span class="secure-label">Encrypted checkout</span>
+          </div>
+
+          <div class="field-grid">
+            <label class="field full"><span>Email address</span><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><small></small></label>
+            <label class="field"><span>First name</span><input id="firstName" name="firstName" autocomplete="given-name" required><small></small></label>
+            <label class="field"><span>Last name</span><input id="lastName" name="lastName" autocomplete="family-name" required><small></small></label>
+            <label class="field full"><span>Address</span><input id="address" name="address" autocomplete="street-address" placeholder="Street address" required><small></small></label>
+            <label class="field full"><span>Apartment, suite, etc. <em>optional</em></span><input id="apartment" name="apartment" autocomplete="address-line2"></label>
+            <label class="field"><span>City</span><input id="city" name="city" autocomplete="address-level2" required><small></small></label>
+            <label class="field"><span>Province</span><select id="province" name="province" autocomplete="address-level1" required><option value="">Select province</option><option>Alberta</option><option>British Columbia</option><option>Manitoba</option><option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Nova Scotia</option><option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option><option>Saskatchewan</option><option>Northwest Territories</option><option>Nunavut</option><option>Yukon</option></select><small></small></label>
+            <label class="field"><span>Postal code</span><input id="postalCode" name="postalCode" autocomplete="postal-code" placeholder="A1A 1A1" maxlength="7" required><small></small></label>
+            <label class="field"><span>Phone</span><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(416) 555-0123" required><small></small></label>
+          </div>
+
+          <label class="checkout-checkbox"><input type="checkbox" name="updates"><span>Send me drop announcements and early-access updates.</span></label>
+        </section>
+
+        <section class="checkout-card">
+          <div class="checkout-section-heading simple"><div><p class="eyebrow">Delivery</p><h2>Choose a shipping method</h2></div></div>
+          <div class="shipping-methods" id="shippingMethods">
+            <label class="shipping-option selected"><input type="radio" name="shipping" value="standard" data-price="8" checked><span><strong>Standard shipping</strong><small>Estimated 3–7 business days</small></span><b>$8.00</b></label>
+            <label class="shipping-option"><input type="radio" name="shipping" value="express" data-price="18"><span><strong>Express shipping</strong><small>Estimated 1–3 business days</small></span><b>$18.00</b></label>
+          </div>
+          <p class="free-shipping-note" id="freeShippingNote">Free standard shipping on orders over $100 CAD.</p>
+        </section>
+
+        <section class="checkout-card payment-preview">
+          <div class="checkout-section-heading simple"><div><p class="eyebrow">Payment</p><h2>Payment connection</h2></div></div>
+          <div class="payment-placeholder">
+            <div class="payment-icon">✦</div>
+            <div><strong>Stripe payment will connect here</strong><p>Your checkout form and order totals are fully functional. The final secure card-payment handoff will be connected after the layout is approved.</p></div>
+          </div>
+        </section>
+
+        <label class="checkout-checkbox terms-check"><input id="terms" type="checkbox" required><span>I agree to the store policies and confirm that my order information is correct.</span></label>
+        <p class="form-level-error" id="formError" role="alert"></p>
+        <button class="place-order-button" id="placeOrderButton" type="submit"><span>Review &amp; Confirm Order</span><b id="buttonTotal">$0.00 CAD</b></button>
+        <p class="checkout-safety">Your information stays in this browser during this preview. No card details are collected.</p>
+      </form>
+
+      <section class="order-confirmation" id="orderConfirmation" hidden>
+        <div class="confirmation-mark">✓</div>
+        <p class="eyebrow">Order prepared</p>
+        <h1>Thank you, <span id="confirmationName">there</span>.</h1>
+        <p>Your checkout details have been validated and your order summary is ready. Connect Stripe in the next revision to accept the payment and finalize the order.</p>
+        <div class="confirmation-number"><span>Preview order</span><strong id="orderNumber">INVIA-000000</strong></div>
+        <div id="confirmationSummary"></div>
+        <div class="confirmation-actions"><a href="index.html" class="primary-link">Return home</a><button type="button" id="editOrderButton">Edit checkout</button></div>
+      </section>
+    </section>
+
+    <aside class="checkout-summary-column">
+      <div class="checkout-summary-card">
+        <div class="mobile-summary-toggle" id="mobileSummaryToggle"><span>Order summary</span><strong id="mobileTotal">$0.00 CAD</strong></div>
+        <div class="checkout-summary-content" id="summaryContent">
+          <h2>Your order</h2>
+          <div class="checkout-items" id="checkoutItems"></div>
+          <div class="promo-row"><input id="promoCode" placeholder="Promo code"><button id="applyPromo" type="button">Apply</button></div>
+          <p class="promo-message" id="promoMessage"></p>
+          <div class="summary-lines">
+            <div><span>Subtotal</span><strong id="checkoutSubtotal">$0.00</strong></div>
+            <div><span>Shipping</span><strong id="checkoutShipping">$8.00</strong></div>
+            <div class="discount-line" id="discountLine" hidden><span>Discount</span><strong id="checkoutDiscount">−$0.00</strong></div>
+            <div><span>Estimated tax</span><strong id="checkoutTax">$0.00</strong></div>
+          </div>
+          <div class="checkout-total"><span>Total <small>CAD</small></span><strong id="checkoutTotal">$0.00</strong></div>
+          <div class="checkout-trust"><span>🔒 Secure checkout</span><span>↩ Easy returns</span><span>✦ Premium quality</span></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="script-v20.js?v=20"></script>
+  <script src="checkout-v20.js?v=20"></script>
+</body>
+</html>

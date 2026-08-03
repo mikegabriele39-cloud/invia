@@ -86,11 +86,11 @@ document.querySelectorAll("[data-qty-plus]").forEach(button => {
 });
 
 function getCart(){
-  try { return JSON.parse(localStorage.getItem("inviaCartV19")) || []; }
+  try { return JSON.parse(localStorage.getItem("inviaCartV20")) || []; }
   catch { return []; }
 }
 function saveCart(cart){
-  localStorage.setItem("inviaCartV19", JSON.stringify(cart));
+  localStorage.setItem("inviaCartV20", JSON.stringify(cart));
   renderCart();
 }
 function cartQuantity(cart){
