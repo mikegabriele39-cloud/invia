@@ -1276,3 +1276,45 @@ footer{
 .world-coming-soon .world-copy{z-index:3}
 .coming-soon-badge{display:inline-flex;align-items:center;width:max-content;margin-bottom:14px;padding:8px 13px;border:1px solid rgba(255,255,255,.42);border-radius:999px;background:rgba(8,8,8,.58);backdrop-filter:blur(8px);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#fff}
 .world-coming-soon .world-copy strong{opacity:.58}
+
+
+/* Version 27 — disabled Coming Soon links + Chrome back-button fix support */
+.world-coming-soon,
+.related-coming-soon {
+  cursor: default;
+}
+.world-coming-soon {
+  position: relative;
+}
+.world-coming-soon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(0,0,0,.10);
+  pointer-events: none;
+}
+.world-coming-soon .world-copy {
+  position: relative;
+  z-index: 2;
+}
+.coming-soon-badge {
+  display: inline-flex;
+  width: max-content;
+  margin: 0 0 12px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  background: rgba(9,9,9,.72);
+  color: #f3efe8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.related-coming-soon {
+  opacity: .68;
+}
+.related-coming-soon:hover {
+  transform: none;
+}

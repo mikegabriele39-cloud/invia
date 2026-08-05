@@ -313,3 +313,15 @@ if (canvas) {
   addEventListener("resize",resize);resize();draw();
 }
 renderCart();
+
+// Reset the page transition overlay when Chrome restores a page with Back/Forward.
+window.addEventListener("pageshow", () => {
+  const transition = document.getElementById("pageTransition");
+  transition?.classList.remove("active");
+  document.body.classList.remove("locked");
+});
+
+// Keep unfinished collection cards visible without allowing navigation.
+document.querySelectorAll(".world-coming-soon, .related-coming-soon").forEach(card => {
+  card.addEventListener("click", event => event.preventDefault());
+});
