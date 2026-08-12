@@ -43,3 +43,10 @@ When you later connect Stripe, set your successful-payment redirect to:
 
 ## Important
 The size chart intentionally contains blank measurements because the final sizing should come from your manufacturer.
+
+## Social links page
+- `socials.html` links directly to:
+  - Instagram: @invia_apparel
+  - TikTok: @invia_apparel
+
+The footer snippet now also includes an `Instagram / TikTok` link.
