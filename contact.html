@@ -1,49 +1,45 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title>Contact — INVIA</title><link rel="stylesheet" href="style-v26.css?v=26"></head><body>
-<div class="site-loader compact-loader" id="siteLoader" aria-hidden="true">
-  <div class="loader-mark">
-    <span class="loader-word">INVIA</span>
-    <span></span>
-  </div>
-</div><div class="page-noise"></div><canvas id="particles"></canvas><div class="cursor-light" id="cursorLight"></div>
-<header class="site-header">
-  <a class="brand" href="index.html" data-transition>INVIA</a>
-  <nav class="nav-links" id="navLinks">
-    <a href="collections.html" data-transition class="">Collections</a>
-    <a href="lookbook.html" data-transition class="">Lookbook</a>
-    <a href="about.html" data-transition class="">About</a>
-    <a href="contact.html" data-transition class="active">Contact</a>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | INVIA</title>
+<link rel="stylesheet" href="invia-legal.css">
+</head>
+<body><div class="site-shell"><header>
+  <a class="brand" href="index.html">INVIA</a>
+  <nav>
+    <a href="collections.html">Collections</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </nav>
-  <div class="header-actions">
-    <button class="header-button" data-open-cart>Cart <span data-cart-count>0</span></button>
-    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
-  </div>
 </header>
 <main>
-<section class="page-hero container"><div><p class="eyebrow">Contact</p><h1 class="display">Stay connected.</h1><p class="lead">Follow the first drop, ask a question, or reach out about INVIA.</p></div></section>
-<section class="container section contact-grid">
-  <div class="reveal"><p class="eyebrow">Socials</p><h2 class="display-small" style="margin-top:18px">Follow the journey.</h2>
-    <div class="social-list">
-      <a href="https://www.instagram.com/invia_apparel/" target="_blank" rel="noopener"><span>Instagram · @invia_apparel</span><span>↗</span></a>
-      <a href="https://www.tiktok.com/@invia_apparel" target="_blank" rel="noopener"><span>TikTok · @invia_apparel</span><span>↗</span></a>
-      <a href="mailto:invia.apparel@gmail.com"><span>Email · invia.apparel@gmail.com</span><span>↗</span></a>
+<div class="eyebrow">Support</div>
+<h1>Contact INVIA</h1>
+<p class="muted">Questions about an order, sizing, shipping, or a return? Send us a message.</p>
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="card">
+<div class="grid">
+<div><label for="name">Name</label><input id="name" name="name" required></div>
+<div><label for="email">Email</label><input id="email" type="email" name="email" required></div>
+</div>
+<label for="order">Order number <span class="muted">(optional)</span></label>
+<input id="order" name="order_number">
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="7" required></textarea>
+<br><br>
+<button class="btn" type="submit">Send Message</button>
+</form>
+
+<div class="notice">Replace <strong>YOUR_FORM_ID</strong> in this file with your Formspree form ID, or connect this form to whichever email/form service you use.</div>
+</main><footer>
+  <div class="footer-inner">
+    <div>© INVIA Apparel</div>
+    <div class="footer-links">
+      <a href="shipping.html">Shipping</a>
+      <a href="returns.html">Returns & Exchanges</a>
+      <a href="size-chart.html">Size Chart</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
-  <form class="contact-form reveal" id="contactForm">
-    <div class="form-row"><label for="name">Name</label><input id="name" name="name" required></div>
-    <div class="form-row"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
-    <div class="form-row"><label for="subject">Subject</label><input id="subject" name="subject" value="INVIA website message"></div>
-    <div class="form-row"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-    <button class="add-button" type="submit">Open Email</button>
-  </form>
-</section>
-</main>
-
-<div class="drawer-overlay" id="cartOverlay"></div>
-<aside class="cart-drawer" id="cartDrawer">
-  <div class="cart-header"><h2>Your Cart</h2><button class="close-cart" id="closeCart">×</button></div>
-  <div class="cart-body" id="cartBody"></div>
-  <div class="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="subtotalValue">$0.00</strong></div><a class="checkout-button" href="checkout.html">Proceed to Checkout</a><p class="cart-footer-note">Taxes and shipping calculated at checkout.</p></div>
-</aside>
-<div class="page-transition" id="pageTransition"></div>
-<footer><span>© 2026 INVIA Apparel</span><span>Faith · Perseverance · Purpose</span></footer>
-<script src="script-v26.js?v=26"></script></body></html>
+</footer></div></body></html>
