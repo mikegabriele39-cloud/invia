@@ -325,3 +325,20 @@ window.addEventListener("pageshow", () => {
 document.querySelectorAll(".world-coming-soon, .related-coming-soon").forEach(card => {
   card.addEventListener("click", event => event.preventDefault());
 });
+
+
+// INVIA sold-out helper: set data-stock="0" on a product/add button when unavailable.
+document.querySelectorAll('[data-stock="0"]').forEach(el => {
+  el.classList.add('sold-out-state');
+  if (el.matches('button')) {
+    el.disabled = true;
+    const span = el.querySelector('span');
+    if (span) span.textContent = 'Sold Out'; else el.textContent = 'Sold Out';
+  }
+  if (!el.nextElementSibling?.classList?.contains('sold-out-label')) {
+    const label = document.createElement('span');
+    label.className = 'sold-out-label';
+    label.textContent = 'Sold Out';
+    el.insertAdjacentElement('afterend', label);
+  }
+});
