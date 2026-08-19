@@ -3,8 +3,38 @@
 (() => {
   const WAITLIST_URL = 'index.html#waitlist';
 
+  function applyImageEdgeFix() {
+    if (document.getElementById('invia-edge-fix')) return;
+    const style = document.createElement('style');
+    style.id = 'invia-edge-fix';
+    style.textContent = `
+      /* Hide 1–2px SVG canvas edge artifacts without changing the artwork itself. */
+      .drop-strip-gallery img,
+      .lookbook-duo img,
+      .drop-card-image img,
+      .premium-product-page .gallery-main-image,
+      .premium-product-page .gallery-thumb img {
+        clip-path: inset(2px) !important;
+        -webkit-clip-path: inset(2px) !important;
+        outline: 0 !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+      .drop-strip-gallery,
+      .lookbook-duo,
+      .drop-card-image,
+      .premium-product-page .premium-gallery,
+      .premium-product-page .gallery-thumb {
+        overflow: hidden !important;
+        background: #090909 !important;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
   function applyPrelaunchMode() {
     document.documentElement.classList.add('invia-prelaunch');
+    applyImageEdgeFix();
 
     // Keep the cart code in the repo, but remove cart/checkout entry points from the live pre-launch UI.
     document.querySelectorAll('[data-open-cart], .cart-drawer, .drawer-overlay, a[href="checkout.html"]').forEach(el => {
