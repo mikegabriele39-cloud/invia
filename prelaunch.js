@@ -8,18 +8,7 @@
     const style = document.createElement('style');
     style.id = 'invia-edge-fix';
     style.textContent = `
-      /* Hide 1–2px SVG canvas edge artifacts without changing the artwork itself. */
-      .drop-strip-gallery img,
-      .lookbook-duo img,
-      .drop-card-image img,
-      .premium-product-page .gallery-main-image,
-      .premium-product-page .gallery-thumb img {
-        clip-path: inset(2px) !important;
-        -webkit-clip-path: inset(2px) !important;
-        outline: 0 !important;
-        border: 0 !important;
-        box-shadow: none !important;
-      }
+      /* Remove thin SVG/image edge lines on homepage, Drops, Lookbook and product galleries. */
       .drop-strip-gallery,
       .lookbook-duo,
       .drop-card-image,
@@ -27,6 +16,36 @@
       .premium-product-page .gallery-thumb {
         overflow: hidden !important;
         background: #090909 !important;
+      }
+
+      .drop-strip-gallery img,
+      .lookbook-duo img,
+      .drop-card-image img,
+      .premium-product-page .gallery-main-image,
+      .premium-product-page .gallery-thumb img {
+        clip-path: inset(6px) !important;
+        -webkit-clip-path: inset(6px) !important;
+        outline: none !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Paint over any remaining 1px canvas seam at the container edge. */
+      .drop-strip-gallery::before,
+      .lookbook-art::before,
+      .drop-card-image::before,
+      .premium-product-page .premium-gallery::before {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 6 !important;
+        pointer-events: none !important;
+        box-shadow:
+          inset 2px 0 0 #090909,
+          inset -2px 0 0 #090909,
+          inset 0 2px 0 #090909,
+          inset 0 -2px 0 #090909 !important;
+        border: 0 !important;
       }
     `;
     document.head.appendChild(style);
