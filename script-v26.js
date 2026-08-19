@@ -285,6 +285,78 @@ contactForm?.addEventListener("submit", event => {
   location.href = `mailto:invia.apparel@gmail.com?subject=${subject}&body=${body}`;
 });
 
+// INVIA waitlist — public insert only. Reading the table remains blocked by RLS.
+const waitlistForm = document.getElementById("waitlistForm");
+const waitlistEmail = document.getElementById("waitlistEmail");
+const waitlistStatus = document.getElementById("waitlistStatus");
+const waitlistSubmit = document.getElementById("waitlistSubmit");
+const waitlistSuccess = document.getElementById("waitlistSuccess");
+const waitlistAgain = document.getElementById("waitlistAgain");
+const SUPABASE_URL = "https://ibwwdsnlbwvuyhfdasdj.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_nXg3n9IgxQTveiYLCd1CQA_y9cNWdnV";
+
+waitlistForm?.addEventListener("submit", async event => {
+  event.preventDefault();
+  const email = String(waitlistEmail?.value || "").trim().toLowerCase();
+  if (!email || !waitlistEmail.checkValidity()) {
+    waitlistStatus.textContent = "Enter a valid email address.";
+    waitlistStatus.className = "waitlist-status error";
+    waitlistEmail?.focus();
+    return;
+  }
+
+  waitlistStatus.textContent = "";
+  waitlistSubmit.disabled = true;
+  waitlistSubmit.classList.add("loading");
+  waitlistSubmit.querySelector("span").textContent = "Joining...";
+
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/Waitlist`, {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_PUBLISHABLE_KEY,
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify({ email })
+    });
+
+    if (response.ok) {
+      waitlistForm.hidden = true;
+      waitlistSuccess.hidden = false;
+      localStorage.setItem("inviaWaitlistJoined", "true");
+      return;
+    }
+
+    const text = await response.text();
+    if (response.status === 409 || /duplicate|unique/i.test(text)) {
+      waitlistStatus.textContent = "That email is already on the waitlist.";
+      waitlistStatus.className = "waitlist-status note";
+    } else {
+      console.error("INVIA waitlist error:", response.status, text);
+      waitlistStatus.textContent = "Couldn’t join right now. Please try again.";
+      waitlistStatus.className = "waitlist-status error";
+    }
+  } catch (error) {
+    console.error("INVIA waitlist network error:", error);
+    waitlistStatus.textContent = "Connection issue. Please try again.";
+    waitlistStatus.className = "waitlist-status error";
+  } finally {
+    waitlistSubmit.disabled = false;
+    waitlistSubmit.classList.remove("loading");
+    waitlistSubmit.querySelector("span").textContent = "Join Waitlist";
+  }
+});
+
+waitlistAgain?.addEventListener("click", () => {
+  waitlistSuccess.hidden = true;
+  waitlistForm.hidden = false;
+  waitlistForm.reset();
+  waitlistStatus.textContent = "";
+  waitlistStatus.className = "waitlist-status";
+  waitlistEmail?.focus();
+});
+
 const canvas = document.getElementById("particles");
 if (canvas) {
   const ctx = canvas.getContext("2d");
@@ -325,7 +397,6 @@ window.addEventListener("pageshow", () => {
 document.querySelectorAll(".world-coming-soon, .related-coming-soon").forEach(card => {
   card.addEventListener("click", event => event.preventDefault());
 });
-
 
 // INVIA sold-out helper: set data-stock="0" on a product/add button when unavailable.
 document.querySelectorAll('[data-stock="0"]').forEach(el => {
