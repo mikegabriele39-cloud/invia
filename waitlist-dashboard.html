@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>INVIA — Waitlist Demand</title>
+  <style>
+    :root{--bg:#090909;--panel:#0f0f0f;--line:rgba(255,255,255,.1);--muted:rgba(255,255,255,.55);--text:#f3efe9}
+    *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}body{min-height:100vh;background-image:radial-gradient(circle at 20% 10%,rgba(255,255,255,.035),transparent 30%),radial-gradient(circle at 85% 15%,rgba(110,16,16,.055),transparent 32%)}
+    .wrap{width:min(1180px,calc(100% - 36px));margin:0 auto;padding:54px 0 80px}.top{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+    .eyebrow{font-size:.68rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}.title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(3rem,7vw,7rem);font-weight:400;line-height:.9;margin:14px 0 0;letter-spacing:-.04em}.top p{max-width:430px;color:var(--muted);line-height:1.7;margin:0}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:28px 0}.status{font-size:.8rem;color:var(--muted)}button{border:1px solid var(--line);background:#111;color:var(--text);padding:11px 16px;border-radius:999px;cursor:pointer;font:inherit;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}button:hover{border-color:rgba(255,255,255,.25)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{position:relative;overflow:hidden;min-height:250px;padding:26px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.005)),var(--panel)}.card::after{content:"";position:absolute;right:-80px;bottom:-110px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(130,20,20,.13),transparent 65%);pointer-events:none}.drop{font-size:.66rem;letter-spacing:.18em;color:var(--muted)}.name{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,4vw,4rem);font-weight:400;line-height:.94;margin:14px 0 28px}.count{font-size:clamp(3.4rem,7vw,6rem);font-weight:300;line-height:1}.label{margin-top:10px;color:var(--muted);font-size:.78rem}.summary{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}.summary .card{min-height:150px}.summary .name{font-size:1rem;font-family:Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}.summary .count{font-size:3rem}.note{margin-top:28px;padding:20px 22px;border:1px solid var(--line);border-radius:18px;color:var(--muted);font-size:.82rem;line-height:1.7}.error{color:#e09a9a}
+    @media(max-width:800px){.top{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.summary{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div><div class="eyebrow">INVIA · INTERNAL</div><h1 class="title">Waitlist Demand.</h1></div>
+      <p>Live interest totals from the INVIA waitlist. This page shows aggregate demand only — no customer emails are exposed here.</p>
+    </div>
+
+    <div class="toolbar"><div class="status" id="status">Loading live demand…</div><button id="refresh" type="button">Refresh</button></div>
+
+    <section class="grid">
+      <article class="card"><div class="drop">DROP 001</div><h2 class="name">NO<br>ENEMIES</h2><div class="count" id="noEnemies">—</div><div class="label">people interested</div></article>
+      <article class="card"><div class="drop">DROP 002</div><h2 class="name">PIERCE THE<br>HEAVENS</h2><div class="count" id="pierce">—</div><div class="label">people interested</div></article>
+      <article class="card"><div class="drop">DROP 003</div><h2 class="name">WALK BY<br>FAITH</h2><div class="count" id="walkFaith">—</div><div class="label">people interested</div></article>
+    </section>
+
+    <section class="summary">
+      <article class="card"><h2 class="name">Total waitlist signups</h2><div class="count" id="total">—</div></article>
+      <article class="card"><h2 class="name">Interested in all three</h2><div class="count" id="allThree">—</div></article>
+    </section>
+
+    <div class="note">Counts update from Supabase whenever you refresh this page. A person who selects two shirts is counted once in each shirt's total, which is exactly what you want for production-demand planning.</div>
+  </main>
+<script>
+const SUPABASE_URL = 'https://ibwwdsnlbwvuyhfdasdj.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_nXg3n9IgxQTveiYLCd1CQA_y9cNWdnV';
+
+async function loadDemand(){
+  const status = document.getElementById('status');
+  status.textContent = 'Loading live demand…';
+  status.className = 'status';
+  try{
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_waitlist_demand`,{
+      method:'POST',
+      headers:{'apikey':SUPABASE_PUBLISHABLE_KEY,'Content-Type':'application/json'},
+      body:'{}'
+    });
+    if(!res.ok) throw new Error(await res.text());
+    const rows = await res.json();
+    const data = Array.isArray(rows) ? rows[0] : rows;
+    document.getElementById('noEnemies').textContent = data?.no_enemies ?? 0;
+    document.getElementById('pierce').textContent = data?.pierce_the_heavens ?? 0;
+    document.getElementById('walkFaith').textContent = data?.walk_by_faith ?? 0;
+    document.getElementById('allThree').textContent = data?.all_three ?? 0;
+    document.getElementById('total').textContent = data?.total_signups ?? 0;
+    status.textContent = `Updated ${new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}`;
+  }catch(err){
+    console.error(err);
+    status.textContent = 'Dashboard is ready, but the Supabase counting function still needs to be created.';
+    status.className = 'status error';
+  }
+}
+
+document.getElementById('refresh').addEventListener('click',loadDemand);
+loadDemand();
+</script>
+</body>
+</html>
