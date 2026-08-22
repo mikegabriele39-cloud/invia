@@ -1,0 +1,17 @@
+/* Keep all drop mockups consistently large without cropping the shirt artwork */
+.drop-card-image img,
+.drop-strip-gallery img,
+.lookbook-duo img{
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:scale(1.06);
+  transform-origin:center center;
+}
+
+/* Keep Lookbook hover motion while preserving the larger base scale */
+.lookbook-feature:hover .lookbook-duo img:first-child{
+  transform:translateX(-6px) scale(1.06)!important;
+}
+.lookbook-feature:hover .lookbook-duo img:last-child{
+  transform:translateX(6px) scale(1.06)!important;
+}
