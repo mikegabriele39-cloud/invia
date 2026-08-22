@@ -8,26 +8,30 @@
   transform-origin:center center;
 }
 
-/* Walk By Faith source artwork fills more of its SVG canvas, so normalize it visually */
+/* Walk By Faith SVGs fill their canvas more than the other mockups, so size them down separately */
 .drop-card-image img[src="1.svg"],
-.drop-card-image img[src="2.svg"],
 .drop-strip-gallery img[src="1.svg"],
-.drop-strip-gallery img[src="2.svg"],
-.lookbook-duo img[src="1.svg"],
-.lookbook-duo img[src="2.svg"]{
-  transform:scale(.94)!important;
+.lookbook-duo img[src="1.svg"]{
+  transform:scale(.90)!important;
 }
 
-/* Keep Lookbook hover motion while preserving the normalized sizes */
+.drop-card-image img[src="2.svg"],
+.drop-strip-gallery img[src="2.svg"],
+.lookbook-duo img[src="2.svg"]{
+  transform:scale(.98)!important;
+}
+
+/* Keep Lookbook hover motion while preserving each mockup's base scale */
 .lookbook-feature:hover .lookbook-duo img:first-child{
   transform:translateX(-6px) scale(1.06)!important;
 }
 .lookbook-feature:hover .lookbook-duo img:last-child{
   transform:translateX(6px) scale(1.06)!important;
 }
-.lookbook-feature:hover .lookbook-duo img[src="1.svg"]:first-child{
-  transform:translateX(-6px) scale(.94)!important;
+
+.lookbook-feature:hover .lookbook-duo img[src="1.svg"]{
+  transform:translateX(-6px) scale(.90)!important;
 }
-.lookbook-feature:hover .lookbook-duo img[src="2.svg"]:last-child{
-  transform:translateX(6px) scale(.94)!important;
+.lookbook-feature:hover .lookbook-duo img[src="2.svg"]{
+  transform:translateX(6px) scale(.98)!important;
 }
