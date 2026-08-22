@@ -8,10 +8,26 @@
   transform-origin:center center;
 }
 
-/* Keep Lookbook hover motion while preserving the larger base scale */
+/* Walk By Faith source artwork fills more of its SVG canvas, so normalize it visually */
+.drop-card-image img[src="1.svg"],
+.drop-card-image img[src="2.svg"],
+.drop-strip-gallery img[src="1.svg"],
+.drop-strip-gallery img[src="2.svg"],
+.lookbook-duo img[src="1.svg"],
+.lookbook-duo img[src="2.svg"]{
+  transform:scale(.94)!important;
+}
+
+/* Keep Lookbook hover motion while preserving the normalized sizes */
 .lookbook-feature:hover .lookbook-duo img:first-child{
   transform:translateX(-6px) scale(1.06)!important;
 }
 .lookbook-feature:hover .lookbook-duo img:last-child{
   transform:translateX(6px) scale(1.06)!important;
+}
+.lookbook-feature:hover .lookbook-duo img[src="1.svg"]:first-child{
+  transform:translateX(-6px) scale(.94)!important;
+}
+.lookbook-feature:hover .lookbook-duo img[src="2.svg"]:last-child{
+  transform:translateX(6px) scale(.94)!important;
 }
