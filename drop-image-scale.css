@@ -1,6 +1,5 @@
-/* INVIA final drop image treatment — transparent SVGs, consistent scale, both sides always visible */
+/* INVIA final drop image treatment — transparent SVGs, consistent scale */
 
-/* Let the transparent SVGs sit naturally on the site's dark surfaces. */
 .drop-card-image,
 .drop-strip-gallery,
 .lookbook-art,
@@ -23,39 +22,32 @@
   clip-path:none!important;
 }
 
-/* Homepage: show FRONT + BACK together instead of hiding one behind hover. */
+/* Homepage: front by default, back on hover. */
 .drop-card-image{
-  display:grid!important;
-  grid-template-columns:1fr 1fr!important;
-  align-items:center!important;
-  gap:4px!important;
-  aspect-ratio:1.55/1!important;
-  padding:12px 8px 6px!important;
+  position:relative!important;
+  display:block!important;
+  aspect-ratio:1/1.04!important;
+  overflow:hidden!important;
+  padding:0!important;
 }
 .drop-card-image::after{display:none!important}
-.drop-card-image img{
-  position:static!important;
-  inset:auto!important;
+.drop-card-image .drop-front,
+.drop-card-image .drop-back{
+  position:absolute!important;
+  inset:0!important;
   display:block!important;
   width:100%!important;
   height:100%!important;
-  min-width:0!important;
-  opacity:1!important;
+  opacity:1;
   transform:scale(1.08)!important;
-  transition:transform .45s ease!important;
+  transition:opacity .45s ease,transform .45s ease!important;
 }
-.drop-card:hover .drop-front,
-.drop-card:hover .drop-back{
-  opacity:1!important;
-}
-.drop-card:hover .drop-card-image img:first-child{
-  transform:translateX(-4px) scale(1.11)!important;
-}
-.drop-card:hover .drop-card-image img:last-child{
-  transform:translateX(4px) scale(1.11)!important;
-}
+.drop-card-image .drop-front{opacity:1!important}
+.drop-card-image .drop-back{opacity:0!important}
+.drop-card:hover .drop-front{opacity:0!important;transform:scale(1.10)!important}
+.drop-card:hover .drop-back{opacity:1!important;transform:scale(1.10)!important}
 
-/* Drops page: keep both views large, balanced, and uncropped. */
+/* Drops page: front and back stay clearly visible together. */
 .drop-strip-gallery{
   gap:14px!important;
   align-items:center!important;
@@ -68,7 +60,7 @@
   border-radius:18px!important;
 }
 
-/* Lookbook: make front/back the visual focus while preserving the editorial layout. */
+/* Lookbook: front and back stay clearly visible together. */
 .lookbook-art::after{display:none!important}
 .lookbook-duo{
   padding:18px 14px!important;
@@ -78,55 +70,25 @@
   width:100%!important;
   height:100%!important;
   max-height:590px!important;
-  transform:scale(1.09)!important;
+  transform:scale(1.08)!important;
   transition:transform .6s cubic-bezier(.2,.8,.2,1)!important;
 }
 .lookbook-feature:hover .lookbook-duo img:first-child{
-  transform:translateX(-7px) scale(1.12)!important;
+  transform:translateX(-7px) scale(1.11)!important;
 }
 .lookbook-feature:hover .lookbook-duo img:last-child{
-  transform:translateX(7px) scale(1.12)!important;
-}
-
-/* The six Canva exports share the same normalized canvas, so all six use one scale. */
-.drop-card-image img[src="normalized-1 (1).svg"],
-.drop-card-image img[src="normalized-2.svg"],
-.drop-card-image img[src="normalized-3.svg"],
-.drop-card-image img[src="normalized-4.svg"],
-.drop-card-image img[src="normalized-5.svg"],
-.drop-card-image img[src="normalized-6.svg"],
-.drop-strip-gallery img[src="normalized-1 (1).svg"],
-.drop-strip-gallery img[src="normalized-2.svg"],
-.drop-strip-gallery img[src="normalized-3.svg"],
-.drop-strip-gallery img[src="normalized-4.svg"],
-.drop-strip-gallery img[src="normalized-5.svg"],
-.drop-strip-gallery img[src="normalized-6.svg"],
-.lookbook-duo img[src="normalized-1 (1).svg"],
-.lookbook-duo img[src="normalized-2.svg"],
-.lookbook-duo img[src="normalized-3.svg"],
-.lookbook-duo img[src="normalized-4.svg"],
-.lookbook-duo img[src="normalized-5.svg"],
-.lookbook-duo img[src="normalized-6.svg"]{
-  transform:scale(1.08)!important;
+  transform:translateX(7px) scale(1.11)!important;
 }
 
 @media(max-width:900px){
-  .drop-card-image{
-    grid-template-columns:1fr 1fr!important;
-    aspect-ratio:1.45/1!important;
-    padding:8px 4px!important;
-  }
-  .drop-card-image .drop-back{display:block!important;opacity:1!important}
-  .drop-card:hover .drop-front{opacity:1!important}
+  .drop-card-image .drop-back{display:block!important;opacity:0!important}
+  .drop-card:hover .drop-front{opacity:1!important;transform:scale(1.08)!important}
+  .drop-card:hover .drop-back{opacity:0!important;transform:scale(1.08)!important}
   .lookbook-duo{padding:14px 8px!important}
 }
 
 @media(max-width:600px){
-  .drop-card-image{
-    aspect-ratio:1.32/1!important;
-    gap:0!important;
-  }
-  .drop-card-image img{transform:scale(1.04)!important}
+  .drop-card-image .drop-front,.drop-card-image .drop-back{transform:scale(1.04)!important}
   .drop-strip-gallery{gap:6px!important}
   .drop-strip-gallery img{transform:scale(1.03)!important}
   .lookbook-duo img{transform:scale(1.04)!important}
