@@ -1,97 +1,28 @@
-/* INVIA final drop image treatment — transparent SVGs, consistent scale */
+/* Final shirt image treatment: use the transparent product assets directly. */
+.drop-card-image,.drop-strip-gallery,.lookbook-art,.lookbook-duo,.premium-product-page .premium-gallery,.premium-product-page .gallery-thumb{background:#090909!important}
+.drop-card-image::after,.drop-strip-gallery::after,.lookbook-art::after,.premium-product-page .premium-gallery::after{display:none!important}
+.drop-card-image img,.drop-strip-gallery img,.lookbook-duo img,.premium-product-page .gallery-main-image,.premium-product-page .gallery-thumb img{object-fit:contain!important;object-position:center!important;background:transparent!important;border:0!important;outline:0!important;box-shadow:none!important;filter:none!important;clip-path:none!important;-webkit-mask-image:none!important;mask-image:none!important}
 
-.drop-card-image,
-.drop-strip-gallery,
-.lookbook-art,
-.lookbook-duo{
-  background:#090909!important;
-}
-
-.drop-card-image img,
-.drop-strip-gallery img,
-.lookbook-duo img{
-  object-fit:contain!important;
-  object-position:center!important;
-  background:transparent!important;
-  border:0!important;
-  outline:0!important;
-  box-shadow:none!important;
-  filter:none!important;
-  -webkit-mask-image:none!important;
-  mask-image:none!important;
-  clip-path:none!important;
-}
-
-/* Homepage: front by default, back on hover. */
-.drop-card-image{
-  position:relative!important;
-  display:block!important;
-  aspect-ratio:1/1.04!important;
-  overflow:hidden!important;
-  padding:0!important;
-}
-.drop-card-image::after{display:none!important}
-.drop-card-image .drop-front,
-.drop-card-image .drop-back{
-  position:absolute!important;
-  inset:0!important;
-  display:block!important;
-  width:100%!important;
-  height:100%!important;
-  opacity:1;
-  transform:scale(1.08)!important;
-  transition:opacity .45s ease,transform .45s ease!important;
-}
+/* Homepage: front normally, back on hover. */
+.drop-card-image{position:relative!important;display:block!important;aspect-ratio:1/1.04!important;overflow:hidden!important;padding:0!important}
+.drop-card-image .drop-front,.drop-card-image .drop-back{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;transition:opacity .4s ease!important;transform:none!important}
 .drop-card-image .drop-front{opacity:1!important}
 .drop-card-image .drop-back{opacity:0!important}
-.drop-card:hover .drop-front{opacity:0!important;transform:scale(1.10)!important}
-.drop-card:hover .drop-back{opacity:1!important;transform:scale(1.10)!important}
+.drop-card:hover .drop-front{opacity:0!important;transform:none!important}
+.drop-card:hover .drop-back{opacity:1!important;transform:none!important}
 
-/* Drops page: front and back stay clearly visible together. */
-.drop-strip-gallery{
-  gap:14px!important;
-  align-items:center!important;
-}
-.drop-strip-gallery::after{display:none!important}
-.drop-strip-gallery img{
-  width:100%!important;
-  aspect-ratio:1/1.12!important;
-  transform:scale(1.08)!important;
-  border-radius:18px!important;
-}
+/* Drops and lookbook: both sides visible, clean and uncropped. */
+.drop-strip-gallery{gap:14px!important;align-items:center!important}
+.drop-strip-gallery img{width:100%!important;aspect-ratio:1/1.08!important;transform:none!important;border-radius:18px!important}
+.lookbook-duo{padding:18px 14px!important;gap:4px!important}
+.lookbook-duo img{width:100%!important;height:100%!important;max-height:590px!important;transform:none!important;transition:transform .45s ease!important}
+.lookbook-feature:hover .lookbook-duo img:first-child{transform:translateX(-5px) scale(1.02)!important}
+.lookbook-feature:hover .lookbook-duo img:last-child{transform:translateX(5px) scale(1.02)!important}
 
-/* Lookbook: front and back stay clearly visible together. */
-.lookbook-art::after{display:none!important}
-.lookbook-duo{
-  padding:18px 14px!important;
-  gap:2px!important;
-}
-.lookbook-duo img{
-  width:100%!important;
-  height:100%!important;
-  max-height:590px!important;
-  transform:scale(1.08)!important;
-  transition:transform .6s cubic-bezier(.2,.8,.2,1)!important;
-}
-.lookbook-feature:hover .lookbook-duo img:first-child{
-  transform:translateX(-7px) scale(1.11)!important;
-}
-.lookbook-feature:hover .lookbook-duo img:last-child{
-  transform:translateX(7px) scale(1.11)!important;
-}
+/* Product pages. */
+.premium-product-page .premium-gallery{overflow:hidden!important;padding:0!important}
+.premium-product-page .gallery-main-image{display:block!important;width:100%!important;height:100%!important;padding:0!important;transform:none!important}
+.premium-product-page .gallery-thumb img{display:block!important;width:100%!important;height:100%!important;padding:0!important;transform:none!important}
 
-@media(max-width:900px){
-  .drop-card-image .drop-back{display:block!important;opacity:0!important}
-  .drop-card:hover .drop-front{opacity:1!important;transform:scale(1.08)!important}
-  .drop-card:hover .drop-back{opacity:0!important;transform:scale(1.08)!important}
-  .lookbook-duo{padding:14px 8px!important}
-}
-
-@media(max-width:600px){
-  .drop-card-image .drop-front,.drop-card-image .drop-back{transform:scale(1.04)!important}
-  .drop-strip-gallery{gap:6px!important}
-  .drop-strip-gallery img{transform:scale(1.03)!important}
-  .lookbook-duo img{transform:scale(1.04)!important}
-  .lookbook-feature:hover .lookbook-duo img:first-child,
-  .lookbook-feature:hover .lookbook-duo img:last-child{transform:scale(1.04)!important}
-}
+@media(max-width:900px){.drop-card-image .drop-back{display:none!important}.drop-card:hover .drop-front{opacity:1!important}.lookbook-duo{padding:14px 8px!important}}
+@media(max-width:600px){.drop-strip-gallery{gap:6px!important}.lookbook-feature:hover .lookbook-duo img:first-child,.lookbook-feature:hover .lookbook-duo img:last-child{transform:none!important}}
