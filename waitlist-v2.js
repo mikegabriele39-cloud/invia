@@ -22,7 +22,7 @@
   function refreshSelectAllLabel() {
     if (!selectAll) return;
     const allSelected = options.length > 0 && options.every(option => option.checked);
-    selectAll.textContent = allSelected ? 'Clear all' : 'Select all three';
+    selectAll.textContent = allSelected ? 'Clear all' : 'Select both';
   }
 
   options.forEach(option => option.addEventListener('change', () => {
@@ -45,7 +45,7 @@
     const interests = selectedInterests();
 
     if (!interests.length) {
-      if (interestError) interestError.textContent = 'Choose at least one shirt.';
+      if (interestError) interestError.textContent = 'Choose at least one collection.';
       options[0]?.focus();
       return;
     }
