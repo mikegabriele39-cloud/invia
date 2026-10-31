@@ -40,3 +40,9 @@ html{scroll-behavior:smooth}.waitlist-section{padding-top:38px;padding-bottom:11
 .invia-world-grid .drop-card-copy strong{border-bottom:1px solid rgba(255,255,255,.55);padding-bottom:7px}
 .drops-page-grid .invia-world-image{min-height:450px!important}
 @media(max-width:700px){.invia-world-grid{grid-template-columns:1fr!important;gap:24px!important}.invia-world-image{min-height:300px!important}.invia-world-image .invia-world-monogram{font-size:8rem!important}.drops-page-grid .invia-world-image{min-height:280px!important}}
+
+/* Sacred World artwork: Gustave Doré, The Crucifixion (1866), public domain */
+.invia-world-image.sacred-frame{background-image:linear-gradient(180deg,rgba(0,0,0,.09) 0%,rgba(0,0,0,.18) 50%,rgba(0,0,0,.45) 100%),url("https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Dor%C3%A9_-_Crucifixion_of_Jesus.jpg?width=1200")!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important}
+.invia-world-image.sacred-frame .invia-world-monogram{position:relative;z-index:3;color:#fff!important;opacity:.88!important;text-shadow:0 2px 14px rgba(0,0,0,.85),0 0 30px rgba(0,0,0,.6)!important}
+.invia-world-image.sacred-frame .world-frame-caption{z-index:3;text-shadow:0 2px 9px #000}
+.invia-world-image.sacred-frame::before{z-index:2}
