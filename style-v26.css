@@ -20,3 +20,23 @@ html{scroll-behavior:smooth}.waitlist-section{padding-top:38px;padding-bottom:11
 .invia-world-image{display:flex!important;align-items:center;justify-content:center;min-height:320px;background:radial-gradient(circle at 50% 42%,#222 0%,#111 42%,#090909 78%)!important;border:1px solid rgba(255,255,255,.07);border-radius:22px}
 .invia-world-monogram{font-family:"Italiana",Georgia,serif;font-size:clamp(5rem,13vw,10rem);color:rgba(240,235,222,.38);font-weight:400;line-height:1}
 @media(max-width:700px){.invia-world-grid{grid-template-columns:1fr}.invia-world-image{min-height:230px}}
+
+/* INVIA / two-world editorial framed collection panels */
+.invia-world-grid{gap:32px!important;max-width:1180px!important}
+.invia-world-grid .drop-card{border:1px solid rgba(255,255,255,.55)!important;border-radius:2px!important;padding:12px!important;background:#080808!important;box-shadow:0 0 0 1px rgba(255,255,255,.07),0 24px 65px rgba(0,0,0,.3)!important}
+.invia-world-grid .drop-card:hover{transform:translateY(-5px)!important;border-color:#fff!important;box-shadow:0 0 0 1px rgba(255,255,255,.25),0 24px 65px rgba(0,0,0,.45)!important}
+.invia-world-grid .drop-card-image::after{display:none!important}
+.invia-world-image{position:relative!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;min-height:390px!important;aspect-ratio:1/1!important;border:1px solid rgba(255,255,255,.55)!important;border-radius:0!important;background:radial-gradient(ellipse at center,#1d1d1d 0%,#0c0c0c 65%,#050505 100%)!important;overflow:hidden}
+.invia-world-image::before{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.22);pointer-events:none}
+.invia-world-image .invia-world-monogram{font-family:"Italiana",Georgia,serif!important;font-size:clamp(7rem,14vw,12rem)!important;color:#e9e7e2!important;opacity:.85;line-height:1;letter-spacing:-.06em;text-shadow:0 0 40px rgba(255,255,255,.08)}
+.invia-world-image .world-frame-caption{position:absolute;bottom:43px;left:0;right:0;text-align:center;color:#ddd;letter-spacing:.32em;font-size:.62rem;font-weight:500}
+.invia-world-image .frame-corner{position:absolute;width:25px;height:25px;border-color:#f3f1eb;z-index:4;pointer-events:none}
+.invia-world-image .frame-tl{top:26px;left:26px;border-top:2px solid;border-left:2px solid}
+.invia-world-image .frame-tr{top:26px;right:26px;border-top:2px solid;border-right:2px solid}
+.invia-world-image .frame-bl{bottom:26px;left:26px;border-bottom:2px solid;border-left:2px solid}
+.invia-world-image .frame-br{bottom:26px;right:26px;border-bottom:2px solid;border-right:2px solid}
+.invia-world-grid .drop-card-copy{padding:24px 15px 22px!important}
+.invia-world-grid .drop-card-copy h3{font-family:"Italiana",Georgia,serif;font-size:clamp(2.4rem,4vw,4rem);font-weight:400;letter-spacing:.025em}
+.invia-world-grid .drop-card-copy strong{border-bottom:1px solid rgba(255,255,255,.55);padding-bottom:7px}
+.drops-page-grid .invia-world-image{min-height:450px!important}
+@media(max-width:700px){.invia-world-grid{grid-template-columns:1fr!important;gap:24px!important}.invia-world-image{min-height:300px!important}.invia-world-image .invia-world-monogram{font-size:8rem!important}.drops-page-grid .invia-world-image{min-height:280px!important}}
