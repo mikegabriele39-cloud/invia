@@ -42,13 +42,8 @@
     event.stopImmediatePropagation();
 
     const email = String(emailInput?.value || '').trim().toLowerCase();
-    const interests = selectedInterests();
+    const interests = []; // Global INVIA waitlist; no world selection
 
-    if (!interests.length) {
-      if (interestError) interestError.textContent = 'Choose at least one collection.';
-      options[0]?.focus();
-      return;
-    }
 
     if (!email || !emailInput?.checkValidity()) {
       if (status) {
@@ -83,7 +78,7 @@
       if (response.ok) {
         form.hidden = true;
         success.hidden = false;
-        if (successInterests) successInterests.textContent = `Interested in: ${interests.join(' · ')}`;
+        if (successInterests) successInterests.textContent = 'You’ll hear about releases from both worlds.';
         localStorage.setItem('inviaWaitlistJoined', 'true');
         return;
       }
@@ -131,7 +126,7 @@
     }
     if (successInterests) successInterests.textContent = '';
     refreshSelectAllLabel();
-    options[0]?.focus();
+    emailInput?.focus();
   });
 
   refreshSelectAllLabel();
